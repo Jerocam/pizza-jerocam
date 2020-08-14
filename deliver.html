@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jerocam Pizza</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="js/pizzaForms.js"></script>
+    <link rel="stylesheet" href="style/style.css">
+</head>
+<body id="bd2">
+    <div class="container">
+        <!-- form personal info and pizza order -->
+        <form id="pizzaForm" action=""> 
+            <fieldset id="pinfo">
+                <legend>Personal Information</legend>
+                <div class="form-row">
+                    <div class="form-group col-md-6">
+                        <label class="req" for="inputFirst" id="l1">First Name</label>
+                        <input type="text" class="form-control" id="inputFirst">
+                    </div>
+                    <div class="form-group col-md-6">
+                        <label class="req" for="inputLast" id="l2">Last Name</label>
+                        <input type="text" class="form-control" id="inputLast">
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group col-md-6">
+                        <label class="req" for="inputEmail" id="l3">Email address</label>
+                        <input type="text" class="form-control" id="inputEmail" placeholder="name@example.com">
+                    </div>
+                    <div class="form-group col-md-6">
+                        <label class="req" for="inputPhone" id="l4">Phone</label>
+                        <input type="text" class="form-control" id="inputPhone" placeholder="123-456-7890">
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group col-md-4">
+                        <label class="req" for="inputType" id="l5">Address Type</label>
+                        <select id="inputType" class="form-control">
+                            <option selected disabled>Choose...</option>
+                            <option>House</option>
+                            <option>Apartment</option>
+                            <option>Hotel</option>
+                            <option>Bussiness</option>
+                            <option>Campus</option>
+                            <option>Dorm</option>
+                            <option>Other</option>
+                        </select>
+                    </div>
+                    <div class="form-group col-md-8">
+                        <label class="req" for="inputAddress" id="l6">Street Address</label>
+                        <input type="text" class="form-control" id="inputAddress" placeholder="1234 Main St">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="opt" for="inputAddress2" id="l10">Optional Address Number</label>
+                    <input type="text" class="form-control" id="inputAddress2" placeholder="Apartment number if have">
+                </div>
+                <div class="form-row">
+                    <div class="form-group col-md-5">
+                        <label class="req" for="inputCity" id="l7">City</label>
+                        <input type="text" class="form-control" id="inputCity">
+                    </div>
+                    <div class="form-group col-md-4">
+                        <label class="req" for="inputState" id="l8">State</label>
+                        <select id="inputState" class="form-control">
+                            <option selected disabled>Choose...</option>
+                        </select>
+                    </div>
+                    <div class="form-group col-md-3">
+                        <label class="req" for="inputZip" id="l9">Zip</label>
+                        <input type="text" class="form-control" id="inputZip" placeholder="12345 or 12345-67890">
+                    </div>
+                </div>
+                <div>
+                    <input type="button" class="btn btn-primary" value="Submit" id="submFields">
+                </div>
+            </fieldset>
+            <hr>
+            <fieldset id="build">
+                <legend>Build your order</legend>
+                    <div class="row">
+                        <div class="col-md-8">
+                            <div class="form-group " id="radSizes">
+                                <h5 class="req3">Dough Options</h5> 
+                                <label class="d-block"><input type="radio" name="size" value="0" title='hand'/> Hand Tossed</label>
+                                <label class="d-block"><input type="radio" name="size" value="8" title='thin'/> Thin Crust</label>
+                                <label class="d-block"><input type="radio" name="size" value="12" title='ny'/> New York Style</label>
+                                <label class="d-block"><input type="radio" name="size" value="12" title='gf'/> Gluten Free</label>
+                            </div>
+                            <hr class="hr1">
+                            <h5>Pizza Size Options</h5>
+                            <div class="form-group">
+                                <select id="selectSizes" name="selectSizes">
+                                </select>
+                                <input type="hidden" id="sz_pizza" value="0.00" />
+                            </div>
+                            <hr class="hr1">
+                            <h5>Cheese Options</h5>
+                            <div class="form-group">
+                                <select name="selectCheese" id="selectCheese">
+                                </select>
+                                <input type="hidden" id="op_cheese" value="0.00" />
+                            </div>
+                            <hr class="hr1">
+                            <h5>Sauce Options</h5>
+                            <div class="form-group">
+                                <select name="selectSauce" id="selectSauce">
+                                </select>
+                                <input type="hidden" id="op_sauce" value="0.00" />
+                            </div>
+                            <hr class="hr1">
+                            <h5>Optional Toppings - Each $0.99</h5>
+                            <div class="row" id="pizza_toppings">
+                                <div class="col-md-4" >
+                                    <label class="d-block"><input type="checkbox" name="pepperoni" value=".99" /> pepperoni</label>
+                                    <label class="d-block"><input type="checkbox" name="sausage" value=".99" /> sausage</label>
+                                    <label class="d-block"><input type="checkbox" name="ham" value=".99" /> ham</label>
+                                    <label class="d-block"><input type="checkbox" name="bacon" value=".99" /> bacon</label>
+                                </div>
+                                <div class="col-md-4">
+                                    <label class="d-block"><input type="checkbox" name="salami" value=".99" /> salami</label>
+                                    <label class="d-block"><input type="checkbox" name="peppers" value=".99" /> peppers</label>
+                                    <label class="d-block"><input type="checkbox" name="mushrooms" value=".99" /> mushrooms</label>
+                                    <label class="d-block"><input type="checkbox" name="onions" value=".99" /> onions</label>
+                                </div>
+                                <div class="col-md-4">
+                                    <label class="d-block"><input type="checkbox" name="olives" value=".99" /> olives</label>
+                                    <label class="d-block"><input type="checkbox" name="pineapple" value=".99" /> pineapple</label>
+                                    <label class="d-block"><input type="checkbox" name="jalapenos" value=".99" /> jalapenos</label>
+                                </div>
+                                <input type="hidden" id="topp" value="0.00" />
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <h5>My order process</h5>
+                            <div class="row">
+                                <div class="form-group col-sm-6">
+                                    <h5>SubTotal</h5>
+                                    <h5>Tax - 10%</h5>
+                                    <h4>Total</h4>
+                                </div>
+                                <div class="form-group col-sm-6">
+                                    <input type="text" name="subtotal" value="0.00" readonly="readonly" />
+                                    <input type="text" name="tax" value="0.00" readonly="readonly" />
+                                    <input type="text" name="total" value="0.00" readonly="readonly" />
+                                </div>
+                                <button type="submit" name="submit" class="btn btn-success btn-block btn-lg" id="btnFinish">Finished Building Pizza</button>
+                            </div>     
+                        </div>
+                    </div>
+            </fieldset>
+        </form>
+        <hr id="fhr">
+        <!-- form bill info -->
+        <form id="billPizza" action="">
+            <fieldset id="fs1">
+                <legend>Your Bill Information</legend>
+                <div class="form-row" >
+                    <div class="form-group col-md-6">
+                        <label class="req2" id="lbl1" for="inputFirst2">First Name</label>
+                        <input type="text" class="form-control" id="inputFirst2">
+                    </div>
+                    <div class="form-group col-md-6">
+                        <label class="req2" id="lbl2" for="inputLast2">Last Name</label>
+                        <input type="text" class="form-control" id="inputLast2">
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group col-md-6">
+                        <label class="req2" id="lbl3" for="inputAddressA">Street Address</label>
+                        <input type="text" class="form-control" id="inputAddressA" placeholder="1234 Main St">
+                    </div>
+                    <div class="form-group col-md-6">
+                        <label for="inputAddress2B" id="lbl4">Optional Apartment Number</label>
+                        <input type="text" class="form-control" id="inputAddress2B" placeholder="Apartment number if have">
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group col-md-5">
+                        <label class="req2" id="lbl5" for="inputCity2">City</label>
+                        <input type="text" class="form-control" id="inputCity2">
+                    </div>
+                    <div class="form-group col-md-4">
+                        <label class="req2" id="lbl6" for="inputState2">State</label>
+                        <select id="inputState2" class="form-control">
+                            <option selected disabled value="choose">Choose...</option>
+                        </select>
+                    </div>
+                    <div class="form-group col-md-3">
+                        <label class="req2" id="lbl7" for="inputZip2">Zip code</label>
+                        <input type="text" class="form-control" id="inputZip2" placeholder="12345 or 12345-67890">
+                    </div>
+                </div>
+                <div id="sameDeliver">
+                    <label class="d-block"><input type="checkbox" name="same"/> Same as delivery information</label>
+                </div>
+            </fieldset>
+            <hr>
+            <!-- form credit card info -->
+            <fieldset id="fs2">
+                <legend>Your Credit Card Information</legend>
+                <div class="form-row" >
+                    <div class="form-group col-md-4">
+                        <label class="req4" for="inputCredit" id="crlbl">Credit Card Number</label>
+                        <input type="text" class="form-control" id="inputCredit" placeholder="1111-2222-3333-4444">
+                    </div>
+                    <div class="form-group col-md-4">
+                        <label class="req4" for="inputCode" id="colbl">CVC Code</label>
+                        <input type="text" class="form-control" id="inputCode" placeholder="999">
+                    </div>
+                    <div class="form-group col-md-4">
+                        <label class="req4" for="inputExp" id="exlbl">Expiration Date</label>
+                        <input class="form-control" type="month" id="inputExp" name="trip-start">
+                    </div>
+                </div>
+                <div class="text-center">
+                    <button type="submit" class="btn btn-success btn-lg" id="btnConfirm">Confirm</button>
+                </div>
+            </fieldset>
+        </form>
+    </div>
+</body>
+</html>
