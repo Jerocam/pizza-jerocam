@@ -46,7 +46,7 @@ function orderPizza () {
     let loadStates = function (){
         "use strict";
 
-        $.getJSON("../data/listStates.json", function(result) {
+        $.getJSON("data/listStates.json", function(result) {
             $.each(result, function() {
                 $.each(this, function(key, value) {
                     $("#inputState").append(
